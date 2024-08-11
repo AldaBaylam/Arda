@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Araç Öneri Sistemi - @AldaBaylam</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f0f0f0;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        .container {
+            padding: 20px;
+        }
+        .filters {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 20px;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .filters select, .filters input {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .car-list {
+            margin-top: 20px;
+        }
+        .car-item {
+            background: #fff;
+            margin-bottom: 10px;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .car-item h3 {
+            margin: 0 0 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Araç Öneri Sistemi - @AldaBaylam</h1>
+    </header>
+    <div class="container">
+        <div class="filters">
+            <label for="carType">Araç Tipi:</label>
+            <select id="carType">
+                <option value="SUV">SUV</option>
+                <option value="Sedan">Sedan</option>
+                <option value="Hatchback">Hatchback</option>
+            </select>
+
+            <label for="fuelType">Yakıt Türü:</label>
+            <select id="fuelType">
+                <option value="Benzin">Benzin</option>
+                <option value="Dizel">Dizel</option>
+                <option value="Elektrik">Elektrik</option>
+                <option value="Hibrit">Hibrit</option>
+            </select>
+
+            <label for="transmission">Vites Türü:</label>
+            <select id="transmission">
+                <option value="Manuel">Manuel</option>
+                <option value="Otomatik">Otomatik</option>
+            </select>
+
+            <label for="priceRange">Fiyat Aralığı:</label>
+            <input type="number" id="minPrice" placeholder="En düşük fiyat" />
+            <input type="number" id="maxPrice" placeholder="En yüksek fiyat" />
+
+            <button onclick="filterCars()">Araçları Filtrele</button>
+        </div>
+
+        <div class="car-list" id="carList">
+            <!-- Araç önerileri burada görüntülenecek -->
+        </div>
+    </div>
+
+    <script>
+        const cars = [
+            {
+                model: "Toyota Corolla",
+                type: "Sedan",
+                fuel: "Benzin",
+                transmission: "Otomatik",
+                price: 300000,
+                analysis: "Güvenilir ve düşük yakıt tüketimi ile öne çıkıyor. İkinci el değeri de yüksek.",
+                issues: "Uzun vadede şanzıman problemleri olabilir."
+            },
+            {
+                model: "Honda Civic",
+                type: "Sedan",
+                fuel: "Benzin",
+                transmission: "Manuel",
+                price: 350000,
+                analysis: "Yüksek performans ve şık tasarım. Piyasada oldukça popüler.",
+                issues: "Yedek parça maliyetleri yüksek olabilir."
+            },
+            // Daha fazla araç ekleyebilirsiniz
+        ];
+
+        function filterCars() {
+            const carType = document.getElementById('carType').value;
+            const fuelType = document.getElementById('fuelType').value;
+            const transmission = document.getElementById('transmission').value;
+            const minPrice = document.getElementById('minPrice').value;
+            const maxPrice = document.getElementById('maxPrice').value;
+
+            const filteredCars = cars.filter(car => {
+                return (car.type === carType || carType === "") &&
+                    (car.fuel === fuelType || fuelType === "") &&
+                    (car.transmission === transmission || transmission === "") &&
+                    (car.price >= minPrice && car.price <= maxPrice);
+            });
+
+            displayCars(filteredCars);
+        }
+
+        function displayCars(filteredCars) {
+            const carList = document.getElementById('carList');
+            carList.innerHTML = ""; // Önceki sonuçları temizle
+
+            if (filteredCars.length === 0) {
+                carList.innerHTML = "<p>Belirtilen kriterlere uygun araç bulunamadı.</p>";
+                return;
+            }
+
+            filteredCars.forEach(car => {
+                const carItem = document.createElement('div');
+                carItem.className = "car-item";
+                carItem.innerHTML = `
+                    <h3>${car.model} - ${car.price}₺</h3>
+                    <p><strong>Analiz:</strong> ${car.analysis}</p>
+                    <p><strong>Olası Sorunlar:</strong> ${car.issues}</p>
+                `;
+                carList.appendChild(carItem);
+            });
+        }
+    </script>
+</body>
+  </html>
