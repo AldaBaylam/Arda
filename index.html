@@ -47,6 +47,16 @@
         .car-item h3 {
             margin: 0 0 10px 0;
         }
+        .car-item p {
+            margin: 5px 0;
+        }
+        .car-item a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+        .car-item a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
@@ -60,6 +70,8 @@
                 <option value="SUV">SUV</option>
                 <option value="Sedan">Sedan</option>
                 <option value="Hatchback">Hatchback</option>
+                <option value="Coupe">Coupe</option>
+                <option value="Minivan">Minivan</option>
             </select>
 
             <label for="fuelType">Yakıt Türü:</label>
@@ -97,7 +109,8 @@
                 transmission: "Otomatik",
                 price: 300000,
                 analysis: "Güvenilir ve düşük yakıt tüketimi ile öne çıkıyor. İkinci el değeri de yüksek.",
-                issues: "Uzun vadede şanzıman problemleri olabilir."
+                issues: "Uzun vadede şanzıman problemleri olabilir.",
+                link: "https://www.sahibinden.com/toyota-corolla"
             },
             {
                 model: "Honda Civic",
@@ -106,7 +119,48 @@
                 transmission: "Manuel",
                 price: 350000,
                 analysis: "Yüksek performans ve şık tasarım. Piyasada oldukça popüler.",
-                issues: "Yedek parça maliyetleri yüksek olabilir."
+                issues: "Yedek parça maliyetleri yüksek olabilir.",
+                link: "https://www.sahibinden.com/honda-civic"
+            },
+            {
+                model: "Renault Clio",
+                type: "Hatchback",
+                fuel: "Dizel",
+                transmission: "Manuel",
+                price: 150000,
+                analysis: "Ekonomik ve şehir içi kullanım için ideal. Düşük yakıt tüketimi.",
+                issues: "Uzun vadede motor aşınması olabilir.",
+                link: "https://www.sahibinden.com/renault-clio"
+            },
+            {
+                model: "BMW X5",
+                type: "SUV",
+                fuel: "Dizel",
+                transmission: "Otomatik",
+                price: 600000,
+                analysis: "Lüks ve konforlu. Yüksek performans ve dört çeker özelliği.",
+                issues: "Yüksek bakım maliyetleri.",
+                link: "https://www.sahibinden.com/bmw-x5"
+            },
+            {
+                model: "Tesla Model 3",
+                type: "Sedan",
+                fuel: "Elektrik",
+                transmission: "Otomatik",
+                price: 800000,
+                analysis: "Çevre dostu ve yüksek teknoloji. Uzun menzil ve hızlı şarj.",
+                issues: "Yüksek başlangıç maliyeti.",
+                link: "https://www.sahibinden.com/tesla-model-3"
+            },
+            {
+                model: "Mercedes-Benz C-Class",
+                type: "Sedan",
+                fuel: "Benzin",
+                transmission: "Otomatik",
+                price: 500000,
+                analysis: "Yüksek kalite, konfor ve güvenlik özellikleri.",
+                issues: "Yüksek yedek parça maliyetleri.",
+                link: "https://www.sahibinden.com/mercedes-benz-c-class"
             },
             // Daha fazla araç ekleyebilirsiniz
         ];
@@ -115,8 +169,13 @@
             const carType = document.getElementById('carType').value;
             const fuelType = document.getElementById('fuelType').value;
             const transmission = document.getElementById('transmission').value;
-            const minPrice = document.getElementById('minPrice').value;
-            const maxPrice = document.getElementById('maxPrice').value;
+            const minPrice = document.getElementById('minPrice').value || 0;
+            const maxPrice = document.getElementById('maxPrice').value || Infinity;
+
+            if (minPrice < 1000 || maxPrice < 1000) {
+                alert("Lütfen daha fazla bir fiyat giriniz.");
+                return;
+            }
 
             const filteredCars = cars.filter(car => {
                 return (car.type === carType || carType === "") &&
@@ -144,10 +203,11 @@
                     <h3>${car.model} - ${car.price}₺</h3>
                     <p><strong>Analiz:</strong> ${car.analysis}</p>
                     <p><strong>Olası Sorunlar:</strong> ${car.issues}</p>
+                    <a href="${car.link}" target="_blank">Detaylar için tıklayın</a>
                 `;
                 carList.appendChild(carItem);
             });
         }
     </script>
 </body>
-  </html>
+</html>
