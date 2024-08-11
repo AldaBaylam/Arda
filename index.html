@@ -3,211 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Araç Öneri Sistemi - @AldaBaylam</title>
+    <title>Araba - AldaBaylam</title>
     <style>
         body {
             font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
             margin: 0;
             padding: 0;
-            background: #f0f0f0;
         }
         header {
-            background: #333;
+            background-color: #333;
             color: #fff;
-            padding: 10px 20px;
+            padding: 20px;
             text-align: center;
+            position: relative;
+        }
+        header a {
+            position: absolute;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+            color: #fff;
+            text-decoration: none;
         }
         .container {
             padding: 20px;
         }
-        .filters {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
+        .section {
+            background-color: #fff;
             margin-bottom: 20px;
-            background: #fff;
             padding: 20px;
-            border-radius: 8px;
-        }
-        .filters select, .filters input {
-            padding: 8px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-        .car-list {
-            margin-top: 20px;
-        }
-        .car-item {
-            background: #fff;
-            margin-bottom: 10px;
-            padding: 15px;
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
-        .car-item h3 {
-            margin: 0 0 10px 0;
+        .section h2 {
+            margin-top: 0;
         }
-        .car-item p {
-            margin: 5px 0;
-        }
-        .car-item a {
-            color: #0066cc;
-            text-decoration: none;
-        }
-        .car-item a:hover {
-            text-decoration: underline;
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Araç Öneri Sistemi - @AldaBaylam</h1>
+        <h1>Araba - AldaBaylam</h1>
+        <a href="https://www.instagram.com/ardaa.b7?igsh=MTJucW05Mnlma3I4MQ==" target="_blank">by @AldaBaylam</a>
     </header>
     <div class="container">
-        <div class="filters">
-            <label for="carType">Araç Tipi:</label>
-            <select id="carType">
-                <option value="SUV">SUV</option>
-                <option value="Sedan">Sedan</option>
-                <option value="Hatchback">Hatchback</option>
-                <option value="Coupe">Coupe</option>
-                <option value="Minivan">Minivan</option>
-            </select>
-
-            <label for="fuelType">Yakıt Türü:</label>
-            <select id="fuelType">
-                <option value="Benzin">Benzin</option>
-                <option value="Dizel">Dizel</option>
-                <option value="Elektrik">Elektrik</option>
-                <option value="Hibrit">Hibrit</option>
-            </select>
-
-            <label for="transmission">Vites Türü:</label>
-            <select id="transmission">
-                <option value="Manuel">Manuel</option>
-                <option value="Otomatik">Otomatik</option>
-            </select>
-
-            <label for="priceRange">Fiyat Aralığı:</label>
-            <input type="number" id="minPrice" placeholder="En düşük fiyat" />
-            <input type="number" id="maxPrice" placeholder="En yüksek fiyat" />
-
-            <button onclick="filterCars()">Araçları Filtrele</button>
+        <div class="section">
+            <h2>L Park Nasıl Yapılır?</h2>
+            <p>L park yapmak, özellikle dar alanlarda zor olabilir. İşte dikkat etmeniz gereken püf noktaları:</p>
+            <ul>
+                <li>Aynalarınızı doğru konumlandırın.</li>
+                <li>Yavaş ve kontrollü bir şekilde geri gidin.</li>
+                <li>Tekerlekleri uygun zamanda kırın.</li>
+                <li>Park ettiğinizde aracın hizasını kontrol edin.</li>
+            </ul>
         </div>
-
-        <div class="car-list" id="carList">
-            <!-- Araç önerileri burada görüntülenecek -->
+        <div class="section">
+            <h2>Vites Nasıl Değiştirilir?</h2>
+            <p>Manuel vitesli araç kullanıyorsanız, vites değiştirmek sürüşün en önemli parçalarından biridir:</p>
+            <ul>
+                <li>Debriyaja sonuna kadar basın.</li>
+                <li>Vitesi uygun hıza göre ayarlayın.</li>
+                <li>Debriyajdan yavaşça çekin ve gaza basın.</li>
+                <li>Vites geçişlerinin pürüzsüz olmasına özen gösterin.</li>
+            </ul>
         </div>
+        <div class="section">
+            <h2>Araba Nasıl Kalkar?</h2>
+            <p>Araba kaldırmak, özellikle yeni başlayanlar için zorlayıcı olabilir. İşte adım adım nasıl yapılacağı:</p>
+            <ul>
+                <li>Debriyaja basın ve vitesi 1'e alın.</li>
+                <li>Gaza hafifçe basarken debriyajı yavaşça bırakın.</li>
+                <li>Araba hareket etmeye başladığında debriyajı tamamen bırakın ve hızı artırın.</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>Araba Nasıl Durdurulur?</h2>
+            <p>Araba durdurmak, acil durumlarda hayati öneme sahip olabilir. İşte doğru durdurma adımları:</p>
+            <ul>
+                <li>Önce frene hafifçe basarak hızı düşürün.</li>
+                <li>Araba yavaşladığında debriyaja tamamen basın.</li>
+                <li>Vitesi boşa alın ve freni tamamen uygulayarak durun.</li>
+            </ul>
+        </div>
+        <!-- Daha fazla bölüm eklenebilir -->
     </div>
-
-    <script>
-        const cars = [
-            {
-                model: "Toyota Corolla",
-                type: "Sedan",
-                fuel: "Benzin",
-                transmission: "Otomatik",
-                price: 300000,
-                analysis: "Güvenilir ve düşük yakıt tüketimi ile öne çıkıyor. İkinci el değeri de yüksek.",
-                issues: "Uzun vadede şanzıman problemleri olabilir.",
-                link: "https://www.sahibinden.com/toyota-corolla"
-            },
-            {
-                model: "Honda Civic",
-                type: "Sedan",
-                fuel: "Benzin",
-                transmission: "Manuel",
-                price: 350000,
-                analysis: "Yüksek performans ve şık tasarım. Piyasada oldukça popüler.",
-                issues: "Yedek parça maliyetleri yüksek olabilir.",
-                link: "https://www.sahibinden.com/honda-civic"
-            },
-            {
-                model: "Renault Clio",
-                type: "Hatchback",
-                fuel: "Dizel",
-                transmission: "Manuel",
-                price: 150000,
-                analysis: "Ekonomik ve şehir içi kullanım için ideal. Düşük yakıt tüketimi.",
-                issues: "Uzun vadede motor aşınması olabilir.",
-                link: "https://www.sahibinden.com/renault-clio"
-            },
-            {
-                model: "BMW X5",
-                type: "SUV",
-                fuel: "Dizel",
-                transmission: "Otomatik",
-                price: 600000,
-                analysis: "Lüks ve konforlu. Yüksek performans ve dört çeker özelliği.",
-                issues: "Yüksek bakım maliyetleri.",
-                link: "https://www.sahibinden.com/bmw-x5"
-            },
-            {
-                model: "Tesla Model 3",
-                type: "Sedan",
-                fuel: "Elektrik",
-                transmission: "Otomatik",
-                price: 800000,
-                analysis: "Çevre dostu ve yüksek teknoloji. Uzun menzil ve hızlı şarj.",
-                issues: "Yüksek başlangıç maliyeti.",
-                link: "https://www.sahibinden.com/tesla-model-3"
-            },
-            {
-                model: "Mercedes-Benz C-Class",
-                type: "Sedan",
-                fuel: "Benzin",
-                transmission: "Otomatik",
-                price: 500000,
-                analysis: "Yüksek kalite, konfor ve güvenlik özellikleri.",
-                issues: "Yüksek yedek parça maliyetleri.",
-                link: "https://www.sahibinden.com/mercedes-benz-c-class"
-            },
-            // Daha fazla araç ekleyebilirsiniz
-        ];
-
-        function filterCars() {
-            const carType = document.getElementById('carType').value;
-            const fuelType = document.getElementById('fuelType').value;
-            const transmission = document.getElementById('transmission').value;
-            const minPrice = document.getElementById('minPrice').value || 0;
-            const maxPrice = document.getElementById('maxPrice').value || Infinity;
-
-            if (minPrice < 1000 || maxPrice < 1000) {
-                alert("Lütfen daha fazla bir fiyat giriniz.");
-                return;
-            }
-
-            const filteredCars = cars.filter(car => {
-                return (car.type === carType || carType === "") &&
-                    (car.fuel === fuelType || fuelType === "") &&
-                    (car.transmission === transmission || transmission === "") &&
-                    (car.price >= minPrice && car.price <= maxPrice);
-            });
-
-            displayCars(filteredCars);
-        }
-
-        function displayCars(filteredCars) {
-            const carList = document.getElementById('carList');
-            carList.innerHTML = ""; // Önceki sonuçları temizle
-
-            if (filteredCars.length === 0) {
-                carList.innerHTML = "<p>Belirtilen kriterlere uygun araç bulunamadı.</p>";
-                return;
-            }
-
-            filteredCars.forEach(car => {
-                const carItem = document.createElement('div');
-                carItem.className = "car-item";
-                carItem.innerHTML = `
-                    <h3>${car.model} - ${car.price}₺</h3>
-                    <p><strong>Analiz:</strong> ${car.analysis}</p>
-                    <p><strong>Olası Sorunlar:</strong> ${car.issues}</p>
-                    <a href="${car.link}" target="_blank">Detaylar için tıklayın</a>
-                `;
-                carList.appendChild(carItem);
-            });
-        }
-    </script>
+    <footer>
+        © 2024 AldaBaylam. Tüm hakları saklıdır.
+    </footer>
 </body>
 </html>
