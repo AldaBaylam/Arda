@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Araba - AldaBaylam</title>
+    <title>AldaBaylam</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -48,6 +48,11 @@
             display: none;
             margin-top: 10px;
         }
+        .more-info {
+            color: #007BFF;
+            cursor: pointer;
+            text-decoration: underline;
+        }
         footer {
             background-color: #333;
             color: #fff;
@@ -61,100 +66,132 @@
 </head>
 <body>
     <header>
-        <h1>Araba - AldaBaylam</h1>
+        <h1>AldaBaylam</h1>
     </header>
     <div class="container">
         <div class="section">
             <h2>L Park Nasıl Yapılır?</h2>
             <div class="section-content">
                 <p>L park yapmak, özellikle dar alanlarda zor olabilir. İşte dikkat etmeniz gereken püf noktaları...</p>
+                <span class="more-info" onclick="toggleDetails(this)">Daha fazla bilgi için tıklayınız</span>
+                <div class="more-info-content" style="display: none;">
+                    <p>L park etme tekniği, aracın doğru şekilde konumlandırılması ve çevresel faktörlerin dikkate alınması ile başarılı olur...</p>
+                </div>
             </div>
         </div>
         <div class="section">
             <h2>Vites Nasıl Değiştirilir?</h2>
             <div class="section-content">
                 <p>Manuel vitesli araç kullanıyorsanız, vites değiştirmek sürüşün en önemli parçalarından biridir. Vites değiştirme teknikleri ve öneriler...</p>
+                <span class="more-info" onclick="toggleDetails(this)">Daha fazla bilgi için tıklayınız</span>
+                <div class="more-info-content" style="display: none;">
+                    <p>Vites değiştirme süreci, doğru vites seçimini yapmayı ve motor devrini uygun seviyede tutmayı içerir...</p>
+                </div>
             </div>
         </div>
         <div class="section">
             <h2>Araba Nasıl Kalkar?</h2>
             <div class="section-content">
                 <p>Araba kaldırmak, özellikle yeni başlayanlar için zorlayıcı olabilir. İşte adım adım nasıl yapılacağı ve dikkat edilmesi gerekenler...</p>
+                <span class="more-info" onclick="toggleDetails(this)">Daha fazla bilgi için tıklayınız</span>
+                <div class="more-info-content" style="display: none;">
+                    <p>Araba kaldırma işlemi, debriyajı yavaşça bırakmak ve gaz pedalına doğru oranda basmak ile gerçekleştirilir...</p>
+                </div>
             </div>
         </div>
         <div class="section">
             <h2>Araba Nasıl Durdurulur?</h2>
             <div class="section-content">
                 <p>Araba durdurmak, acil durumlarda hayati öneme sahip olabilir. Doğru durdurma teknikleri ve uygulama yöntemleri...</p>
+                <span class="more-info" onclick="toggleDetails(this)">Daha fazla bilgi için tıklayınız</span>
+                <div class="more-info-content" style="display: none;">
+                    <p>Araba durdururken, fren pedalına nazikçe basmak ve aracın hızını kontrol altında tutmak önemlidir...</p>
+                </div>
             </div>
         </div>
         <div class="section">
             <h2>Araç Bakımı Nasıl Yapılır?</h2>
             <div class="section-content">
                 <p>Aracınızın düzenli bakımı, uzun ömürlü ve sorunsuz bir sürüş için kritik öneme sahiptir. Bakım önerileri ve sık yapılan hatalar...</p>
+                <span class="more-info" onclick="toggleDetails(this)">Daha fazla bilgi için tıklayınız</span>
+                <div class="more-info-content" style="display: none;">
+                    <p>Araç bakımında yağ değişimi, filtre temizliği ve lastik kontrolü gibi işlemler düzenli olarak yapılmalıdır...</p>
+                </div>
             </div>
         </div>
         <div class="section">
             <h2>Yakıt Tasarrufu Nasıl Yapılır?</h2>
             <div class="section-content">
                 <p>Yakıt tasarrufu sağlamak hem çevreye hem de cebinize katkı sağlar. Yakıt tasarrufu için ipuçları ve pratik öneriler...</p>
+                <span class="more-info" onclick="toggleDetails(this)">Daha fazla bilgi için tıklayınız</span>
+                <div class="more-info-content" style="display: none;">
+                    <p>Yakıt tasarrufu için, ekonomik sürüş teknikleri ve düzenli araç bakımları uygulamak önemlidir...</p>
+                </div>
             </div>
         </div>
         <div class="section">
             <h2>Acil Durumlarda Nasıl Davranılır?</h2>
             <div class="section-content">
                 <p>Acil bir durumda soğukkanlılığınızı korumak ve doğru adımları atmak hayat kurtarabilir. Acil durumlarda yapılması gerekenler...</p>
+                <span class="more-info" onclick="toggleDetails(this)">Daha fazla bilgi için tıklayınız</span>
+                <div class="more-info-content" style="display: none;">
+                    <p>Acil durumlarda, hızlı ve etkili hareket ederek durumu kontrol altına almak gerekir...</p>
+                </div>
             </div>
         </div>
         <div class="section">
             <h2>Doğru Sürüş Pozisyonu Nasıl Olmalı?</h2>
             <div class="section-content">
                 <p>Doğru sürüş pozisyonu hem konforunuz hem de güvenliğiniz için çok önemlidir. Doğru sürüş pozisyonunu ayarlamak için ipuçları...</p>
+                <span class="more-info" onclick="toggleDetails(this)">Daha fazla bilgi için tıklayınız</span>
+                <div class="more-info-content" style="display: none;">
+                    <p>Sürüş pozisyonunu doğru ayarlamak, direksiyonun ve pedal erişiminin konforlubir sürüş için temel bir unsurdur...</p>
+                <span class="more-info" onclick="toggleDetails(this)">Daha fazla bilgi için tıklayınız</span>
+                <div class="more-info-content" style="display: none;">
+                    <p>Sürücü koltuğunuzun yüksekliğini ve mesafesini, direksiyon simidini rahatça kavrayabileceğiniz bir konumda ayarlayın...</p>
+                </div>
             </div>
         </div>
         <div class="section">
             <h2>Manuel Vitesli Araçlarda Dikkat Edilmesi Gerekenler</h2>
             <div class="section-content">
                 <p>Manuel vitesli araçlar kullanırken dikkat edilmesi gereken püf noktalar ve sık yapılan hatalar...</p>
+                <span class="more-info" onclick="toggleDetails(this)">Daha fazla bilgi için tıklayınız</span>
+                <div class="more-info-content" style="display: none;">
+                    <p>Manuel vitesli araçlarda, vites değiştirme ve debriyaj kullanımına dikkat etmek gerekir...</p>
+                </div>
             </div>
         </div>
         <div class="section">
             <h2>Otomatik Vitesli Araçlarda Kullanım İpuçları</h2>
             <div class="section-content">
                 <p>Otomatik vitesli araçlarda kullanımın kolaylıkları ve dikkat edilmesi gereken noktalar...</p>
+                <span class="more-info" onclick="toggleDetails(this)">Daha fazla bilgi için tıklayınız</span>
+                <div class="more-info-content" style="display: none;">
+                    <p>Otomatik vitesli araçlarda, vites kolunun doğru konumda olduğundan emin olunmalı ve dururken park konumuna getirilmelidir.</p>
+                </div>
             </div>
         </div>
         <div class="section">
             <h2>Yol Güvenliği İçin Temel Kurallar</h2>
             <div class="section-content">
-                <p>Yolda güvenliğinizi sağlamak için temel trafik kuralları ve uygulamalar...</p>
-            </div>
-        </div>
-        <div class="section">
-            <h2>Yolda Karşılaşabileceğiniz Yaygın Sorunlar</h2>
-            <div class="section-content">
-                <p>Yolda karşılaşabileceğiniz yaygın sorunlar ve bunlarla başa çıkma yolları...</p>
-            </div>
-        </div>
-        <div class="section">
-            <h2>Lastik Bakımı ve Değişimi</h2>
-            <div class="section-content">
-                <p>Lastik bakımı, güvenli sürüş için hayati öneme sahiptir. Lastiklerin nasıl kontrol edileceği ve ne zaman değiştirileceği hakkında bilgiler...</p>
+                <p>Yolda güvenliğimizi sağlamak için temel trafik kuralları ve uygulamalar hakkında bilgi...</p>
+                <span class="more-info" onclick="toggleDetails(this)">Daha fazla bilgi için tıklayınız</span>
+                <div class="more-info-content" style="display: none;">
+                    <p>Yol güvenliğini sağlamak için hız limitlerine uymak, güvenli takip mesafesi bırakmak ve sinyal vermek önemlidir...</p>
+                </div>
             </div>
         </div>
     </div>
     <footer>
-        by @AldaBaylam | © 2024 AldaBaylam. Tüm hakları saklıdır.
+        <p>&copy; 2024 AldaBaylam. Tüm hakları saklıdır.</p>
+        <p><a href="https://www.instagram.com/ardaa.b7?igsh=MTJucW05Mnlma3I4MQ==" target="_blank" style="color: #fff; text-decoration: underline;">by AldaBaylam</a></p>
     </footer>
-
     <script>
-        // Tıklama ile içeriği aç/kapat fonksiyonu
-        document.querySelectorAll('.section h2').forEach(header => {
-            header.addEventListener('click', () => {
-                const content = header.nextElementSibling;
-                content.style.display = content.style.display === 'block' ? 'none' : 'block';
-            });
-        });
+        function toggleDetails(element) {
+            const content = element.nextElementSibling;
+            content.style.display = (content.style.display === 'none' || content.style.display === '') ? 'block' : 'none';
+        }
     </script>
 </body>
 </html>
